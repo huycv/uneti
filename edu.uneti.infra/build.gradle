@@ -1,0 +1,20 @@
+plugins {
+    id 'java-library'
+    id 'org.springframework.boot' apply false
+}
+
+apply plugin: 'io.spring.dependency-management'
+
+dependencyManagement {
+       imports {
+           mavenBom org.springframework.boot.gradle.plugin.SpringBootPlugin.BOM_COORDINATES
+       }
+}
+
+dependencies {
+    implementation project(':edu.uneti.core')
+    implementation('org.springframework.boot:spring-boot-starter-data-jpa') {
+        exclude group: "org.hibernate", module:"hibernate-entitymanager"
+        exclude group: "org.hibernate", module:"hibernaate-core"
+    }
+}

@@ -1,0 +1,53 @@
+import org.gradle.api.Project
+
+// Apply java lib
+apply plugin: 'java'
+
+buildscript {
+    ext {
+        springBootVersion = '2.1.1.RELEASE'
+    }
+    repositories {
+        mavenCentral()
+    }
+    dependencies {
+        classpath("org.springframework.boot:spring-boot-gradle-plugin:${springBootVersion}")
+    }
+}
+
+// All project
+allprojects {
+    apply plugin: 'java'
+    sourceCompatibility = 1.8
+    targetCompatibility = 1.8
+    
+    repositories {
+        mavenCentral()
+    }
+}
+
+ext {
+    // Dependencies version
+    lombokVersion = '1.18.4'
+    thymeleafVersion = '3.0.11.RELEASE'
+    jsonWebTokenVersion = '0.9.1'
+}
+
+// Sub project dependencies
+subprojects {
+    apply plugin: 'java'
+    apply plugin: 'eclipse-wtp'
+    version '1.0'
+    // Base name for all project.
+    tasks.withType(Jar) {
+        baseName = "$project.parent.name-$project.name"
+    }
+    
+    tasks.withType(JavaCompile) {
+        options.encoding = 'UTF-8'
+    }
+    dependencies {
+        implementation("org.projectlombok:lombok:${lombokVersion}")
+        annotationProcessor("org.projectlombok:lombok:${lombokVersion}")
+    }
+}
