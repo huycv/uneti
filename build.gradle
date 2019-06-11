@@ -31,6 +31,7 @@ ext {
     lombokVersion = '1.18.4'
     thymeleafVersion = '3.0.11.RELEASE'
     jsonWebTokenVersion = '0.9.1'
+    eclipseLinkVersion = '2.7.4'
 }
 
 // Sub project dependencies

@@ -14,7 +14,7 @@ import lombok.NoArgsConstructor;
 public class Student {
 
 	private String id;
-	private int maSV;
+	private String maSV;
 	private String name;
 	private LocalDate ngaySinh;
 	private Sex sex;

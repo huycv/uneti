@@ -26,6 +26,8 @@ dependencies {
     implementation "io.jsonwebtoken:jjwt:${jsonWebTokenVersion}"
     implementation 'com.microsoft.sqlserver:mssql-jdbc'
     
+    compileOnly "org.eclipse.persistence:org.eclipse.persistence.jpa:${eclipseLinkVersion}"
+    compileOnly "org.eclipse.persistence:org.eclipse.persistence.core:${eclipseLinkVersion}"
     compileOnly "org.thymeleaf:thymeleaf:${thymeleafVersion}"
 	compileOnly "org.thymeleaf:thymeleaf-spring5:${thymeleafVersion}"
     

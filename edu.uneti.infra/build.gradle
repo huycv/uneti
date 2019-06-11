@@ -17,4 +17,6 @@ dependencies {
         exclude group: "org.hibernate", module:"hibernate-entitymanager"
         exclude group: "org.hibernate", module:"hibernaate-core"
     }
+    implementation "org.eclipse.persistence:org.eclipse.persistence.jpa:${eclipseLinkVersion}"
+    implementation "org.eclipse.persistence:org.eclipse.persistence.core:${eclipseLinkVersion}"
 }
